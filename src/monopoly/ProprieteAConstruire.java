@@ -127,7 +127,7 @@ public class ProprieteAConstruire extends CarreauPropriete {
         
         private void propositionAchat( Joueur jou){
                 Scanner sc = new Scanner(System.in);
-                if(this.getLoyerBase() <= jou.getCash()){
+                if(this.getPrixAchat() <= jou.getCash()){
                     System.out.println("Voulez-vous acheter cette propriété : y/n Cela vous coutera : "  + getPrixAchat() + "(toute autre réponses sont considerer comme 'n')");
                     String Answer = sc.nextLine();
                     if("y".equals(Answer)){

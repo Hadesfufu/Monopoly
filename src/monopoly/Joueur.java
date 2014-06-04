@@ -110,6 +110,7 @@ public class Joueur {
         for(ProprieteAConstruire p : this.proprietesAConstruire){
         p.setProprietaire(null);
         }
+        this.getMonopoly().exclusion(this);
     }
     
     public boolean possede(Groupe g){
