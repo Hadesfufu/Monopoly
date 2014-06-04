@@ -28,7 +28,7 @@ public class CarteMouvementAbsolu extends Carte{
     
     @Override
     public void applyEffect(Joueur jou){
-        if(jou.getPositionCourante().getNumero() < getCaseDest().getNumero() && this.getNumCarte() != 21 ){jou.setCash(jou.getCash()+200);}
+        if(jou.getPositionCourante().getNumero() < getCaseDest().getNumero() && getNumCarte() != 21 ){jou.setCash(jou.getCash()+200);}
         jou.setPositionCourante(getCaseDest());
         getCaseDest().execute(jou);
     }
