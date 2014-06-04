@@ -164,7 +164,10 @@ public class Joueur {
     
     private void move(){
          Carreau np = getMonopoly().getCarreau(((this.getPositionCourante().getNumero() + des[2])%40)+1);
-         if(np.getNumero() - this.getPositionCourante().getNumero() < 0){this.setCash(this.getCash()+200);}
+         if(np.getNumero() - this.getPositionCourante().getNumero() < 0){
+             System.out.println("Vous faites un tour");
+             this.setCash(this.getCash()+200);
+         }
          this.setPositionCourante(np);
     }
 }

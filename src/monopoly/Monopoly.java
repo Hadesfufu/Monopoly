@@ -272,7 +272,7 @@ public class Monopoly {
                 }
                 
             }
-            System.out.println("============================ Continuer ? (y/n) ========================= (else = y)");
+            System.out.println("========================== Continuer ? (y/n) ===================== (else = y)");
             if("n".equals(sc.nextLine())){
             this.joueurs.clear();
             }

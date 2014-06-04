@@ -35,6 +35,8 @@ public class Groupe {
     public void setProprietes(ArrayList<ProprieteAConstruire> proprietes) {
         this.proprietes = proprietes;
     }
-        
-        
+    
+    public void addPropriete(ProprieteAConstruire prop){
+        this.proprietes.add(prop);
+    }        
 }

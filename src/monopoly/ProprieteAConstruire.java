@@ -16,7 +16,8 @@ public class ProprieteAConstruire extends CarreauPropriete {
         setMaison3(maison3);
         setMaison4(maison4);
         setHotel(hotel);
-            setGroupePropriete(aGroupe);
+        setGroupePropriete(aGroupe);
+        groupePropriete.addPropriete(this);        
 	}
 
     public int getLoyerAPayer(){
