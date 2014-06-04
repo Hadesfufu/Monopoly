@@ -241,13 +241,13 @@ public class Monopoly {
                 j.avancer();
                 System.out.println("Tour de " + j.getNomJoueur() + ":" + 
                         "\nLancé : " + j.getDes()[2] + "(" + j.getDes()[0] + "+" + j.getDes()[1] + ")" +
-                        "\nPosition : "+ j.getPositionCourante().getNomCase()+ "(" + j.getPositionCourante().getNumero() + ")" + "\n");
+                        "\nPosition : "+ j.getPositionCourante().getNomCase()+ "(" + j.getPositionCourante().getNumero() + ")" );
                     j.getPositionCourante().execute(j);
                 while(j.getDes()[0]==j.getDes()[1] && nbdoble<3){
                     j.avancer();
                     System.out.println("Tour de " + j.getNomJoueur() + ":" + 
                         "\nLancé : " + j.getDes()[2] + "(" + j.getDes()[0] + "+" + j.getDes()[1] + ")" +
-                        "\nPosition : "+ j.getPositionCourante().getNomCase()+ "(" + j.getPositionCourante().getNumero() + ")" + "\n");
+                        "\nPosition : "+ j.getPositionCourante().getNomCase()+ "(" + j.getPositionCourante().getNumero() + ")");
                     nbdoble++;
                     j.getPositionCourante().execute(j);
                 }
@@ -272,7 +272,7 @@ public class Monopoly {
                 }
                 
             }
-            System.out.println("=========================== Continuer ? (y/n) ======================= (else = y)");
+            System.out.println("============================ Continuer ? (y/n) ========================= (else = y)");
             if("n".equals(sc.nextLine())){
             this.joueurs.clear();
             }
