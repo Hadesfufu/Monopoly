@@ -22,12 +22,17 @@ public class Monopoly {
 	private ArrayList<Joueur> joueurs = new ArrayList<Joueur>();
 	private HashMap<Integer,Carreau> carreaux = new HashMap<Integer,Carreau>();
         private Scanner sc = new Scanner(System.in);
-        
-	public Monopoly(String dataFilename, String dataCartename){
+        private boolean Determine;
+	public Monopoly(String dataFilename, String dataCartename, boolean b){
+                Determine = b;
                 buildGamePlateau(dataFilename);
                 buildCartes(dataCartename);
 		inscrireJoueurs();
 	}
+        
+    public Scanner getSc() {
+        return sc;
+    }
 	
 	private void buildGamePlateau(String dataFilename)
 	{
@@ -192,9 +197,13 @@ public class Monopoly {
              public void inscrireJoueurs() {
             Scanner sc = new Scanner(System.in);
             System.out.println("Entrez le nombre de joueurs :");
-            int NbJoueurs = sc.nextInt();
+            int NbJoueurs;
+            if(this.isDetermine()){NbJoueurs = 4;}
+            else{NbJoueurs = sc.nextInt();}
+            
             if(NbJoueurs < 2){NbJoueurs = 2;}
             else if(NbJoueurs > 8){NbJoueurs = 8;}
+            
             sc.nextLine();
             Joueur j;
             for(int i = 0; i < NbJoueurs; i++){
@@ -277,6 +286,7 @@ public class Monopoly {
             this.joueurs.clear();
             }
 	}
+           
         
         public void ordreJoueur(){
             int i = 1;
@@ -319,6 +329,10 @@ public class Monopoly {
 
     public ArrayList<Joueur> getJoueurs() {
         return joueurs;
+    }
+
+    public boolean isDetermine() {
+        return Determine;
     }
         
         

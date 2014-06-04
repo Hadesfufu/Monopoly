@@ -1,6 +1,7 @@
 package monopoly;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Joueur {
 	private String nomJoueur;
@@ -22,9 +23,17 @@ public class Joueur {
 	}
     public int[] lancerDé(){
             int[] buff = new int[3];
-            buff[0] = (int)(Math.random() * 5)+1 ;
-            buff[1] = (int)(Math.random() * 5)+1 ;
-            buff[2] = buff[0] + buff[1];
+            if(this.monopoly.isDetermine()){
+                System.out.println("Dé 1:");
+                buff[0] = this.monopoly.getSc().nextInt();
+                System.out.println("Dé 2:");
+                buff[1] = this.monopoly.getSc().nextInt();
+                }
+                else{
+                buff[0] = (int)(Math.random() * 5)+1 ;
+                buff[1] = (int)(Math.random() * 5)+1 ;
+            }
+                buff[2] = buff[0] + buff[1];
             setDes(buff);
             return buff;
        } 
@@ -161,7 +170,7 @@ public class Joueur {
                 move();
                 }
     }
-    
+        
     private void move(){
          Carreau np = getMonopoly().getCarreau(((this.getPositionCourante().getNumero() + des[2])%40)+1);
          if(np.getNumero() - this.getPositionCourante().getNumero() < 0){
